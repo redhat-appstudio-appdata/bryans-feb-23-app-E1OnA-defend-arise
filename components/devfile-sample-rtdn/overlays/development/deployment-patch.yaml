@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: devfile-sample-rtdn
+  namespace: bflorkie-tenant
+spec:
+  replicas: 1
+  selector: {}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+    spec:
+      containers:
+      - image: quay.io/redhat-appstudio/user-workload@sha256:09d2926440d973d0c0d3b05b81982d8797a6a8e13dd43f92d17ef5a6c15ed91e
+        name: container-image
+        resources: {}
+status: {}
