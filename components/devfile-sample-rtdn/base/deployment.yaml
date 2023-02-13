@@ -23,7 +23,7 @@ spec:
         app.kubernetes.io/instance: devfile-sample-rtdn
     spec:
       containers:
-      - image: quay.io/redhat-appstudio/user-workload:bflorkie-tenant-devfile-sample-rtdn
+      - image: quay.io/redhat-appstudio/user-workload@sha256:09d2926440d973d0c0d3b05b81982d8797a6a8e13dd43f92d17ef5a6c15ed91e
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -40,6 +40,9 @@ spec:
           tcpSocket:
             port: 3001
         resources:
+          limits:
+            cpu: "1"
+            memory: 512Mi
           requests:
             cpu: 10m
             memory: 50Mi
